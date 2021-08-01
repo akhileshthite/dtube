@@ -1,0 +1,29 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+body{
+    background-color: white;
+}
+
+.pages{
+    margin-top: 50px;
+    margin-bottom: 500px;
+}
+
+.footer{
+    background-color: lightgray;
+    margin-top: 140px;
+}
+.footer-links{
+    padding-top: 1px;
+}
