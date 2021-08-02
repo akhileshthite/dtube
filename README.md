@@ -18,6 +18,9 @@
 **Libraries:** 
 ```React.js, Web3.js```
 
+**Tools:** 
+```IPFS```
+
 **Platforms:** 
 ```Ethereum, Fleek```
 
