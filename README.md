@@ -10,3 +10,35 @@
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube" alt="GitHub release" />
   <img src="https://img.shields.io/badge/Platform-Ethereum-purple.svg" alt="platform">
 </div>
+
+## ➔ Technical Details
+**Languages:**
+```Solidity, JavaScript, HTML5, CSS3```
+
+**Libraries:** 
+```React.js, Web3.js```
+
+**Platforms:** 
+```Ethereum, Fleek```
+
+
+## ➔ Running the project
+Open Ganache
+```
+ganache-cli
+```
+
+Install dependencies
+```
+npm install
+```
+
+Push smart contracts to the Ethereum blockchain.
+```
+truffle migrate
+```
+
+Start React app
+```
+npm start
+```
