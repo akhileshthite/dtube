@@ -4,7 +4,7 @@
 
 <h1 align="center">DTube</h1>
 
-<p aign="center"><p align="center">Decentralized video sharing platform on blockchain.</p></p>
+<p aign="center"><p align="center">Decentralized video sharing platform on Ethereum blockchain.</p></p>
 
 <div align="center">
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube" alt="GitHub release" />
@@ -25,13 +25,12 @@
 ```
 ganache-cli
 
-Install dependencies
-
 npm install
 
 truffle migrate
+
 npm start
 ```
 
-## ➔ License ⚖️
+## ➔ License
 [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE) 
