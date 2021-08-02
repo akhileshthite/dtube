@@ -4,7 +4,7 @@
 
 <h1 align="center">DTube</h1>
 
-<p aign="center"><h4 align="center">Decentralized video sharing platform on blockchain.</h4></p>
+<p aign="center"><p align="center">Decentralized video sharing platform on blockchain.</p></p>
 
 <div align="center">
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube" alt="GitHub release" />
