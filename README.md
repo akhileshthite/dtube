@@ -21,12 +21,17 @@
 **Platforms:** 
 ```Ethereum, Fleek```
 
-
 ## ➔ Running the project
 ```
 ganache-cli
+
 Install dependencies
+
 npm install
+
 truffle migrate
 npm start
 ```
+
+## ➔ License ⚖️
+[MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE) 
