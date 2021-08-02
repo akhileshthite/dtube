@@ -23,22 +23,10 @@
 
 
 ## ➔ Running the project
-Open Ganache
 ```
 ganache-cli
-```
-
 Install dependencies
-```
 npm install
-```
-
-Push smart contracts to the Ethereum blockchain.
-```
 truffle migrate
-```
-
-Start React app
-```
 npm start
 ```
