@@ -8,5 +8,5 @@
 
 <div align="center">
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube" alt="GitHub release" />
-  <img src="https://img.shields.io/badge/Platform-Ethereum-green.svg" alt="platform">
+  <img src="https://img.shields.io/badge/Platform-Ethereum-#38E038.svg" alt="platform">
 </div>
