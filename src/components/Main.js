@@ -20,7 +20,7 @@ class Main extends Component {
               </div>
             <h3 className="mt-3"><b><i className="video-title">{this.props.currentTitle}</i></b></h3>
           </div>
-          <div className="vide-feed col-md-2 border border-secondary overflow-auto text-center" style={{ maxHeight: '1000px', minWidth: '175px' }}>
+          <div className="vide-feed col-md-2 border border-secondary overflow-auto text-center" style={{ maxHeight: '1500px', minWidth: '175px' }}>
             <h5 className="feed-title"><b>Video Feed 📺</b></h5>
             <form onSubmit={(event) => {
               event.preventDefault()
