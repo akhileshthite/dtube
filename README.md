@@ -4,10 +4,14 @@
 
 <h1 align="center">DTube</h1>
 
-<p aign="center"><p align="center">Decentralized video sharing platform on Ethereum blockchain.</p></p>
+<p aign="center">
+  <p align="center">Decentralized video sharing platform on Ethereum blockchain.</p>
+  <p align="center">🌐 Website: <a href="https://dtube-eth.on.fleek.co"></a>https://dtube-eth.on.fleek.co</p>
+</p>
 
 <div align="center">
-  <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube" alt="GitHub release" />
+  <img src="https://img.shields.io/github/repo-size/akhileshthite/DTube" alt="platform">
+  <!--<img src="https://img.shields.io/github/v/release/AkhileshThite/DTube" alt="GitHub release" />-->
   <img src="https://img.shields.io/badge/Platform-Ethereum-purple.svg" alt="platform">
 </div>
 
