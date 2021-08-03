@@ -15,14 +15,24 @@ body{
     background-color: white;
 }
 
-.pages{
-    margin-top: 50px;
-    margin-bottom: 500px;
+.main{
+    margin-bottom:-200px;
+}
+.feed-title{
+    font-style:normal;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: -10px;
+}
+.video-title{
+    font-style:normal;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer{
     background-color: lightgray;
-    margin-top: 140px;
+    margin-top: 500px;
 }
 .footer-links{
     padding-top: 1px;

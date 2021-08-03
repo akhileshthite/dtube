@@ -1,18 +1,14 @@
-import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import React, { Component } from 'react';
 import DTube from '../abis/DTube.json'
 import Navbar from './Navbar'
 import Main from './Main'
 import Footer from './Footer'
-import Steps from './Steps'
-import About from './About'
-import Contact from './Contact'
 import Web3 from 'web3';
 import './App.css';
 
 //Declare IPFS
 const ipfsClient = require('ipfs-http-client')
-const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
+const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 
 class App extends Component {
 
@@ -47,7 +43,6 @@ class App extends Component {
       this.setState({ dtube })
       const videosCount = await dtube.methods.videoCount().call()
       this.setState({ videosCount })
-
       // Load videos, sort by newest
       for (var i=videosCount; i>=1; i--) {
         const video = await dtube.methods.videos(i).call()
@@ -55,7 +50,6 @@ class App extends Component {
           videos: [...this.state.videos, video]
         })
       }
-
       //Set latest video with title to view as default 
       const latest = await dtube.methods.videos(videosCount).call()
       this.setState({
@@ -83,7 +77,6 @@ class App extends Component {
 
   uploadVideo = title => {
     console.log("Submitting file to IPFS...")
-
     //adding file to the IPFS
     ipfs.add(this.state.buffer, (error, result) => {
       console.log('IPFS result', result)
@@ -137,30 +130,6 @@ class App extends Component {
             />
         }
         <Footer />
-        {/* Under Development
-          <Router>
-            <Navbar account={this.state.account} />
-            <Switch>
-              <Route>
-                { this.state.loading
-                  ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-                  : <Route path='/' exact component={Main}
-                      videos={this.state.videos}
-                      uploadVideo={this.uploadVideo}
-                      captureFile={this.captureFile}
-                      changeVideo={this.changeVideo}
-                      currentHash={this.state.currentHash}
-                      currentTitle={this.state.currentTitle}
-                    />
-                }
-                <Route path='/steps' exact component={Steps} />
-                <Route path='/about' exact component={About} />
-                <Route path='/contact' exact component={Contact} />
-              </Route>
-            </Switch>
-            <Footer />
-          </Router>
-        */}
       </div>
     );
   }

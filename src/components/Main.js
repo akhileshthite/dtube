@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './App.css';
 
 class Main extends Component {
 
   render() {
     return (
-      <div className="container-fluid text-monospace">
+      <div className="container-fluid text-monospace main">
           <br></br>
           &nbsp;
           <br></br>
@@ -17,10 +18,10 @@ class Main extends Component {
                 >
                 </video>
               </div>
-            <h3 className="mt-3 fw-normal"><b><i>{this.props.currentTitle}</i></b></h3>
+            <h3 className="mt-3"><b><i className="video-title">{this.props.currentTitle}</i></b></h3>
           </div>
-          <div className="vide-feed col-md-2 border border-secondar overflow-auto text-center" style={{ maxHeight: '1000px', minWidth: '175px' }}>
-            <h5><b>Video Feed</b></h5>
+          <div className="vide-feed col-md-2 border border-secondary overflow-auto text-center" style={{ maxHeight: '1000px', minWidth: '175px' }}>
+            <h5 className="feed-title"><b>Video Feed 📺</b></h5>
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
@@ -33,7 +34,7 @@ class Main extends Component {
                     id="videoTitle"
                     type="text"
                     ref={(input) => { this.videoTitle = input }}
-                    className="form-control-sm mt-2"
+                    className="form-control-sm mt-3 mr-3"
                     placeholder="Title.."
                     required />
                 </div>
