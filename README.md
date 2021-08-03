@@ -15,7 +15,7 @@
   <img src="https://img.shields.io/badge/Platform-Ethereum-purple.svg" alt="platform">
 </div>
 
-## ➔ Technical Details
+### ➔ Technical Details
 **Languages:**
 ```Solidity, JavaScript, HTML5, CSS3```
 
@@ -28,7 +28,7 @@
 **Platforms:** 
 ```Ethereum, Fleek```
 
-## ➔ Project setup
+### ➔ Project setup
 ```
 # Open ganache personal blockchain.
 # Don't forget to add private key in MetaMask.
@@ -44,5 +44,5 @@ truffle migrate
 npm start
 ```
 
-## ➔ License
+### ➔ License
 [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE) 
