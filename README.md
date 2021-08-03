@@ -5,8 +5,8 @@
 <h1 align="center">DTube</h1>
 
 <p aign="center">
-  <p align="center">Decentralized video sharing platform on Ethereum blockchain.</p>
-  <p align="center">🌐 Website: <a href="https://dtube-eth.on.fleek.co"></a>https://dtube-eth.on.fleek.co</p>
+  <p align="center">Decentralized video sharing & social media platform on Ethereum blockchain.</p>
+  <p align="center">Website: <a href="https://dtube-eth.on.fleek.co"></a>https://dtube-eth.on.fleek.co</p>
 </p>
 
 <div align="center">
@@ -28,14 +28,19 @@
 **Platforms:** 
 ```Ethereum, Fleek```
 
-## ➔ Running the project
+## ➔ Project setup
 ```
+# Open ganache personal blockchain.
+# Don't forget to add private key in MetaMask.
 ganache-cli
 
+# Install dependancies
 npm install
 
+# Deploy the smart contracts to the blockchain.
 truffle migrate
 
+# Start react app.
 npm start
 ```
 
