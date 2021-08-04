@@ -10,8 +10,8 @@
 </p>
 
 <div align="center">
+  <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube" alt="GitHub release" />
   <img src="https://img.shields.io/github/repo-size/akhileshthite/DTube" alt="platform">
-  <!--<img src="https://img.shields.io/github/v/release/AkhileshThite/DTube" alt="GitHub release" />-->
   <img src="https://img.shields.io/badge/Platform-Ethereum-purple.svg" alt="platform">
 </div>
 
@@ -28,21 +28,25 @@
 **Platforms:** 
 ```Ethereum, Fleek```
 
+### ➔ Networks
+1. `Matic Mumbai Test Network`
+2. `Rinkeby Test Network`
+3. `Ropsten Test Network`
+4. `Goerli Test Network`
+
 ### ➔ Project setup
-```
-# Open ganache personal blockchain.
-# Don't forget to add private key in MetaMask.
-ganache-cli
 
-# Install dependancies
-npm install
+Open ganache personal blockchain. Don't forget to add private key in MetaMask.
+`ganache-cli`
 
-# Deploy the smart contracts to the blockchain.
-truffle migrate
+Install dependancies
+`npm install`
 
-# Start react app.
-npm start
-```
+Deploy the smart contracts to the blockchain.
+`truffle migrate`
+
+Start react app.
+`npm start`
 
 ### ➔ License
 [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE) 
