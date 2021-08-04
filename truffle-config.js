@@ -15,7 +15,9 @@ module.exports = {
       network_id: 80001,
       confirmations: 2,
       timeoutBlocks: 200,
-      skipDryRun: true
+      skipDryRun: true,
+      gas: 6000000,
+      gasPrice: 10000000000,
     },
     rinkeby: {
       provider: function () {
@@ -38,17 +40,6 @@ module.exports = {
       gas: 5000000,
       gasPrice: 25000000000,
       network_id: "*"
-    },
-    kovan: {
-      provider: function () {
-        return new HDWalletProvider(
-          process.env.MNEMONIC,
-          process.env.INFURA_KOVAN
-        )
-      },
-      network_id: 42,
-      gas: 5000000,
-      gasPrice: 25000000000,
     },
     goerli: {
       provider: function () {

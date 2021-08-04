@@ -2870,10 +2870,42 @@
       "transactionHash": "0xf56f4dac196e07712292f68bb716fa08579553c6d4088506b9eb4499f6b7f964"
     },
     "80001": {
-      "events": {},
+      "events": {
+        "0x2c44b862f4b4e08a26a765f9499900759a9ec95360a6f174d53163bd5d367f67": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "hash",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "author",
+              "type": "address"
+            }
+          ],
+          "name": "VideoUploaded",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0xC6eB38bE0949a63F7c3Ac36A053de209970fa19b",
-      "transactionHash": "0x11aa2401ff97c5df4cdb5c2e946f0ae23ce976e78ac6c1eb6e9674d008e15e06"
+      "address": "0xffDed6c68CCF4eD30d2b9c85bA21a926ccCc8e0E",
+      "transactionHash": "0xaa231ad9a28c1c900605c86b8083b6998d6632b26ce9c1ace3c5b1558bee750c"
     },
     "1603382557524": {
       "events": {
@@ -3029,7 +3061,7 @@
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-08-04T13:08:01.568Z",
+  "updatedAt": "2021-08-04T19:38:01.930Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
