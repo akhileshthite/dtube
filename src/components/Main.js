@@ -20,7 +20,7 @@ class Main extends Component {
               </div>
             <h3 className="mt-3"><b><i className="video-title">{this.props.currentTitle}</i></b></h3>
           </div>
-          <div className="vide-feed col-md-2 border border-secondary overflow-auto text-center" style={{ maxHeight: '1500px', minWidth: '175px' }}>
+          <div className="vide-feed col-md-2 border border-secondary overflow-auto text-center" style={{ maxHeight: '3000px', minWidth: '175px' }}>
             <h5 className="feed-title"><b>Video Feed 📺</b></h5>
             <form onSubmit={(event) => {
               event.preventDefault()
@@ -43,19 +43,19 @@ class Main extends Component {
             </form>
             { this.props.videos.map((video, key) => {
               return(
-                <div className="card mb-4 text-center bg-secondary mx-auto" style={{ width: '195px'}} key={key} >
-                  <div className="card-title bg-dark">
-                    <small className="text-white"><b>{video.title}</b></small>
+                  <div className="card mb-4 text-center hover-overlay bg-secondary mx-auto" style={{ width: '195px'}} key={key} >
+                    <div className="card-title bg-dark">
+                      <small className="text-white"><b>{video.title}</b></small>
+                    </div>
+                    <div>
+                      <p onClick={() => this.props.changeVideo(video.hash, video.title)}>
+                        <video
+                          src={`https://ipfs.infura.io/ipfs/${video.hash}`}
+                          style={{ width: '170px' }}
+                        />
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p onClick={() => this.props.changeVideo(video.hash, video.title)}>
-                      <video
-                        src={`https://ipfs.infura.io/ipfs/${video.hash}`}
-                        style={{ width: '170px' }}
-                      />
-                    </p>
-                  </div>
-                </div>
               )
             })}
           </div>

@@ -25,6 +25,7 @@ body{
     margin-bottom: -10px;
 }
 .video-title{
+    margin-left: 10px;
     font-style:normal;
     font-size: xx-large;
     font-family: Arial, Helvetica, sans-serif;

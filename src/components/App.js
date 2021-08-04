@@ -58,7 +58,7 @@ class App extends Component {
       })
       this.setState({ loading: false})
     } else {
-      window.alert('dtube contract not deployed to detected network.')
+      window.alert('DTube contract not deployed to detected network.')
     }
   }
 

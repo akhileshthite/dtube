@@ -131,7 +131,7 @@
   "sourceMap": "25:904:0:-;;;69:1;44:26;;74:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;333:26;8:9:-1;5:2;;;30:1;27;20:12;5:2;333:26:0;25:904;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
   "deployedSourceMap": "25:904:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:904:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;74:28;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;74:28:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;363:564;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;363:564:0;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;363:564:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;363:564:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;363:564:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;363:564:0;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;363:564:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;363:564:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;363:564:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;363:564:0;;;;;;;;;;;;;;;:::i;:::-;;44:26;;;:::i;:::-;;;;;;;;;;;;;;;;;;;106:36;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;106:36:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;106:36:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;106:36:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;74:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;363:564::-;519:1;498:10;492:24;:28;484:37;;;;;;594:1;577:6;571:20;:24;563:33;;;;;;671:1;651:22;;:10;:22;;;;643:31;;;;;;707:10;;:13;;;;;;;;;;;;;781:49;;;;;;;;787:10;;781:49;;;;799:10;781:49;;;;811:6;781:49;;;;819:10;781:49;;;;;760:6;:18;767:10;;760:18;;;;;;;;;;;:70;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;865:57;879:10;;891;903:6;911:10;865:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;865:57:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;865:57:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;363:564;;:::o;44:26::-;;;;:::o;106:36::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;25:904::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
   "source": "pragma solidity ^0.5.0;\n\ncontract DTube {\n  uint public videoCount = 0;\n  string public name = \"DTube\";\n  mapping(uint => Video) public videos;\n\n  struct Video {\n    uint id;\n    string hash;\n    string title;\n    address author;\n  }\n\n  event VideoUploaded(\n    uint id,\n    string hash,\n    string title,\n    address author\n  );\n\n  constructor() public {\n  }\n\n  function uploadVideo(string memory _videoHash, string memory _title) public {\n    // Make sure the video hash exists\n    require(bytes(_videoHash).length > 0);\n    // Make sure video title exists\n    require(bytes(_title).length > 0);\n    // Make sure uploader address exists\n    require(msg.sender!=address(0));\n\n    // Increment video id\n    videoCount ++;\n\n    // Add video to the contract\n    videos[videoCount] = Video(videoCount, _videoHash, _title, msg.sender);\n    // Trigger an event\n    emit VideoUploaded(videoCount, _videoHash, _title, msg.sender);\n  }\n}\n",
-  "sourcePath": "/Users/akhileshthite/Desktop/dvideo-master/src/contracts/DTube.sol",
+  "sourcePath": "/Users/akhileshthite/Desktop/DTube/src/contracts/DTube.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/DTube.sol",
     "exportedSymbols": {
@@ -697,10 +697,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        111,
-                        112
+                        168,
+                        169
                       ],
-                      "referencedDeclaration": 111,
+                      "referencedDeclaration": 168,
                       "src": "484:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -845,10 +845,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        111,
-                        112
+                        168,
+                        169
                       ],
-                      "referencedDeclaration": 111,
+                      "referencedDeclaration": 168,
                       "src": "563:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -896,7 +896,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 108,
+                            "referencedDeclaration": 165,
                             "src": "651:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -993,10 +993,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        111,
-                        112
+                        168,
+                        169
                       ],
-                      "referencedDeclaration": 111,
+                      "referencedDeclaration": 168,
                       "src": "643:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1155,7 +1155,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 108,
+                            "referencedDeclaration": 165,
                             "src": "819:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1282,7 +1282,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 108,
+                          "referencedDeclaration": 165,
                           "src": "911:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2025,10 +2025,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                111,
-                                112
+                                168,
+                                169
                               ],
-                              "referencedDeclaration": 111,
+                              "referencedDeclaration": 168,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -2179,10 +2179,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                111,
-                                112
+                                168,
+                                169
                               ],
-                              "referencedDeclaration": 111,
+                              "referencedDeclaration": 168,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -2333,10 +2333,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                111,
-                                112
+                                168,
+                                169
                               ],
-                              "referencedDeclaration": 111,
+                              "referencedDeclaration": 168,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -2377,7 +2377,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 108,
+                                      "referencedDeclaration": 165,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2661,7 +2661,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 108,
+                                      "referencedDeclaration": 165,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2797,7 +2797,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 108,
+                                  "referencedDeclaration": 165,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2845,17 +2845,35 @@
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0xC6eB38bE0949a63F7c3Ac36A053de209970fa19b",
+      "transactionHash": "0x60751b3c997ec679256b8bb7a32eb7045b782d9271750d8477d997fe8db73cb9"
+    },
     "4": {
       "events": {},
       "links": {},
-      "address": "0xffDed6c68CCF4eD30d2b9c85bA21a926ccCc8e0E",
-      "transactionHash": "0xedc61fa89a632acdd9064482760c22986bfd321721c3999b97bf99a5c1766b97"
+      "address": "0xCDa87299367d6b29fEf13cA08448bFAAF2e4a175",
+      "transactionHash": "0xc2a68cb2b313e9864b3756124ed380becd558a1f2365b4550dbc339761f49dc8"
+    },
+    "5": {
+      "events": {},
+      "links": {},
+      "address": "0x678AF4458950d0aEFBC427e663050f50EbdAB52a",
+      "transactionHash": "0x442860200b868a8251f43ad9f00074bd7cf25f5060130578618a349b132ef8c6"
     },
     "5777": {
       "events": {},
       "links": {},
       "address": "0x2a648e9EB05df0e50feb52f5Ed2A1788499682Ff",
       "transactionHash": "0xf56f4dac196e07712292f68bb716fa08579553c6d4088506b9eb4499f6b7f964"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0xC6eB38bE0949a63F7c3Ac36A053de209970fa19b",
+      "transactionHash": "0x11aa2401ff97c5df4cdb5c2e946f0ae23ce976e78ac6c1eb6e9674d008e15e06"
     },
     "1603382557524": {
       "events": {
@@ -3011,7 +3029,7 @@
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-08-03T09:43:00.819Z",
+  "updatedAt": "2021-08-04T13:08:01.568Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

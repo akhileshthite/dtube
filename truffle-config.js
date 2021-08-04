@@ -2,7 +2,6 @@ require('babel-register');
 require('babel-polyfill');
 require('dotenv').config();
 const HDWalletProvider = require("@truffle/hdwallet-provider")
-const mnemonic = process.env.MNEMONIC;
 
 module.exports = {
   networks: {
@@ -12,14 +11,11 @@ module.exports = {
       network_id: "*"
     },
     matic: {
-      provider: () => new HDWalletProvider(mnemonic, process.env.INFURA_MATIC),
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://rpc-mumbai.maticvigil.com/v1/bd76d9f2e2c3993bbfef0082f25c30d017fc1feb`),
       network_id: 80001,
       confirmations: 2,
-      networkCheckTimeout: 1000000,
       timeoutBlocks: 200,
-      skipDryRun: true,
-      gas: 6000000,
-      gasPrice: 10000000000,
+      skipDryRun: true
     },
     rinkeby: {
       provider: function () {
@@ -65,7 +61,7 @@ module.exports = {
       networkCheckTimeout: 1000000,
       timeoutBlocks: 200,
       gas: 5000000,
-      gasPrice: 25000000000,
+      gasPrice: 25000000000
     },
   },
   contracts_directory: './src/contracts/',
