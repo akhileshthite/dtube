@@ -35,7 +35,7 @@
 4. ```Goerli Test Network```
 
 ### ➔ Project setup
-`
+```
 Open ganache personal blockchain. Don't forget to add private key in MetaMask.
 
 ```ganache-cli```
@@ -51,6 +51,6 @@ Deploy the smart contracts to the blockchain.
 Start react app.
 
 ```npm start```
-`
+```
 ### ➔ License
 [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE) 
