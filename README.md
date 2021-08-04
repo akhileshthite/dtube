@@ -10,7 +10,7 @@
 </p>
 
 <div align="center">
-  <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube" alt="GitHub release" />
+  <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube-1FC71F" alt="GitHub release" />
   <img src="https://img.shields.io/github/repo-size/akhileshthite/DTube" alt="platform">
   <img src="https://img.shields.io/badge/Platform-Ethereum-purple.svg" alt="platform">
 </div>
