@@ -38,7 +38,7 @@
 ```
 Open ganache personal blockchain. Don't forget to add private key in MetaMask.
 
-```ganache-cli```
+`ganache-cli`
 
 Install dependancies
 
