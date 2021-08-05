@@ -40,19 +40,27 @@
 ### ➔ Project setup
 Open ganache personal blockchain. Don't forget to add private key in MetaMask.
 
-```ganache-cli```
+```
+ganache-cli
+```
 
 Install dependancies
 
-```npm install```
+```
+npm install
+```
 
 Deploy the smart contracts to the blockchain.
 
-```truffle migrate```
+```
+truffle migrate
+```
 
 Start react app.
 
-```npm start```
+```
+npm start
+```
 
 ### ➔ License
 [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE) 
