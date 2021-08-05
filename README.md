@@ -34,6 +34,9 @@
 3. ```Ropsten Test Network```
 4. ```Goerli Test Network```
 
+### ➔ Contracts
+` /src/contracts/DTube.sol`
+
 ### ➔ Project setup
 Open ganache personal blockchain. Don't forget to add private key in MetaMask.
 
