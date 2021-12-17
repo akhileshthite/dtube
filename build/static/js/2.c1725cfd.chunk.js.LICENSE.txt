@@ -1,0 +1,127 @@
+/*
+ * [hi-base32]{@link https://github.com/emn178/hi-base32}
+ *
+ * @version 0.5.0
+ * @author Chen, Yi-Cyuan [emn178@gmail.com]
+ * @copyright Chen, Yi-Cyuan 2015-2018
+ * @license MIT
+ */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+
+/*!
+ * v2.1.4-104-gc868b3a
+ * 
+ */
+
+/*! https://mths.be/punycode v1.4.1 by @mathias */
+
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/**
+ * [js-sha3]{@link https://github.com/emn178/js-sha3}
+ *
+ * @version 0.5.7
+ * @author Chen, Yi-Cyuan [emn178@gmail.com]
+ * @copyright Chen, Yi-Cyuan 2015-2016
+ * @license MIT
+ */
+
+/**
+ * [js-sha3]{@link https://github.com/emn178/js-sha3}
+ *
+ * @version 0.8.0
+ * @author Chen, Yi-Cyuan [emn178@gmail.com]
+ * @copyright Chen, Yi-Cyuan 2015-2018
+ * @license MIT
+ */
+
+/**
+* A handy class to calculate color values.
+*
+* @version 1.0
+* @author Robert Eisele <robert@xarg.org>
+* @copyright Copyright (c) 2010, Robert Eisele
+* @link http://www.xarg.org/2010/03/generate-client-side-png-files-using-javascript/
+* @license http://www.opensource.org/licenses/bsd-license.php BSD License
+*
+*/
+
+/** @license React v0.19.1
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** PROMISIFY CALLBACK-STYLE FUNCTIONS TO ES6 PROMISES
+*
+* EXAMPLE:
+* const fn = promisify( (callback) => callback(null, "Hello world!") );
+* fn((err, str) => console.log(str));
+* fn().then((str) => console.log(str));
+* //Both functions, will log 'Hello world!'
+*
+* Note: The function you pass, may have any arguments you want, but the latest
+* have to be the callback, which you will call with: next(err, value)
+*
+* @param method: Function/Array/Map = The function(s) to promisify
+* @param options: Map =
+*  "context" (default is function): The context which to apply the called function
+*  "replace" (default is falsy): When passed an array/map, if to replace the original object
+*
+* @return: A promise if passed a function, otherwise the object with the promises
+*
+* @license: MIT
+* @version: 1.0.3
+* @author: Manuel Di Iorio
+**/
+
+//! stable.js 0.1.8, https://github.com/Two-Screen/stable
+
+//! © 2018 Angry Bytes and contributors. MIT licensed.

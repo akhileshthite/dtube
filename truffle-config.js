@@ -10,6 +10,11 @@ module.exports = {
       port: 7545,
       network_id: "*"
     },
+    development:{
+      host: "127.0.0.1",
+      port: 8545, 
+      network_id:"*"
+    },
     matic: {
       provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://rpc-mumbai.maticvigil.com/v1/bd76d9f2e2c3993bbfef0082f25c30d017fc1feb`),
       network_id: 80001,
