@@ -20,8 +20,9 @@ class Main extends Component {
               </div>
             <h3 className="mt-3"><b><i className="video-title">{this.props.currentTitle}</i></b></h3>
           </div>
-          <div className="vide-feed col-md-2 border border-secondary overflow-auto text-center" style={{ maxHeight: '4000px', minWidth: '175px' }}>
-            <h5 className="feed-title"><b>Video Feed 📺</b></h5>
+          <div className="vide-feed col-md-2  overflow-auto text-center" style={{ maxHeight: '4000px', minWidth: '175px' }}>
+            <h5 className="feed-title"><b>📺 Video Blocks 📺</b></h5>
+             &nbsp;
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value

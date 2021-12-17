@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
 
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <a type="button" class="btn btn-primary border border-dark" href="https://github.com/AkhileshThite/DTube" target="_blank">GitHub</a>
+                <a type="button" class="btn btn-primary border border-dark" href="https://github.com/Ludacris-Plaid/dtube" target="_blank">GitHub</a>
               </div>
             </div>
           </div>
