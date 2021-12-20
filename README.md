@@ -15,10 +15,10 @@
   <a href="https://twitter.com/AkhileshThite_" target="_blank"><img src="https://img.shields.io/twitter/follow/akhileshthite_?style=social" alt="twitter" /></a>
 </div>
 
-### Article
+## Article
 `Build a Social Media dApp & Deploy it on Polygon`: [Link](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon)
 
-### Technical Details
+## Technical Details
 **Languages:**
 ```Solidity, JavaScript, HTML5, CSS3```
 
@@ -31,16 +31,16 @@
 **Platforms:** 
 ```Ethereum, Fleek```
 
-### Networks
+## Networks
 1. ```Matic Mumbai Test Network```
 2. ```Rinkeby Test Network```
 3. ```Ropsten Test Network```
 4. ```Goerli Test Network```
 
-### Contracts
+## Contracts
 ` /src/contracts/DTube.sol`
 
-### Project setup
+## Project setup
 Open ganache personal blockchain. Don't forget to add private key in MetaMask.
 
 ```
@@ -65,7 +65,7 @@ Start react app.
 npm start
 ```
 
-### License
+## License
 [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE)
 
 Don't forget to leave a 🌟.
