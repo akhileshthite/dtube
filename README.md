@@ -10,12 +10,10 @@
 </p>
 
 <div align="center">
+  <img src="https://visitor-badge.glitch.me/badge?page_id=AkhileshThite.dtube" alt="visitors" />
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube?color=1FC71F" alt="GitHub release" />
-  <img src="https://img.shields.io/github/repo-size/akhileshthite/DTube" alt="platform">
   <img src="https://img.shields.io/badge/Platform-Ethereum-purple.svg" alt="platform">
-  https://img.shields.io/twitter/url/https/github.com/akhileshthite_/akhileshthite_.svg?style=social&label=Follow
-  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40fold_left)](https://twitter.com/akhileshthite_)
-
+  <img src="https://img.shields.io/twitter/follow/akhileshthite_?style=social" alt="twitter">
 </div>
 
 ### ➔ Technical Details
