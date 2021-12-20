@@ -12,7 +12,7 @@
 <div align="center">
   <img src="https://visitor-badge.glitch.me/badge?page_id=AkhileshThite.dtube" alt="visitors" />
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube?color=1FC71F" alt="GitHub release" />
-  <img src="https://img.shields.io/twitter/follow/akhileshthite_?style=social" href="https://twitter.com/AkhileshThite_" target="_blank" alt="twitter">
+  ![Twitter Follow](https://img.shields.io/twitter/follow/akhileshthite_?style=social)
 </div>
 
 ### ➔ Technical Details
