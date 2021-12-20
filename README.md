@@ -14,6 +14,8 @@
   <img src="https://img.shields.io/github/repo-size/akhileshthite/DTube" alt="platform">
   <img src="https://img.shields.io/badge/Platform-Ethereum-purple.svg" alt="platform">
   https://img.shields.io/twitter/url/https/github.com/akhileshthite_/akhileshthite_.svg?style=social&label=Follow
+  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40fold_left)](https://twitter.com/akhileshthite_)
+
 </div>
 
 ### ➔ Technical Details
