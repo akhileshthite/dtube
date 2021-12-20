@@ -13,8 +13,7 @@
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube?color=1FC71F" alt="GitHub release" />
   <img src="https://img.shields.io/github/repo-size/akhileshthite/DTube" alt="platform">
   <img src="https://img.shields.io/badge/Platform-Ethereum-purple.svg" alt="platform">
-  [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40akhileshthite_)](https://twitter.com/akhileshthite_)
-
+  https://img.shields.io/twitter/url/https/github.com/akhileshthite_/akhileshthite_.svg?style=social&label=Follow
 </div>
 
 ### ➔ Technical Details
