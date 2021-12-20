@@ -16,7 +16,7 @@
 </div>
 
 ### Article
-Build a Social Media dApp & Deploy it on Polygon: [Link](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon)
+`Build a Social Media dApp & Deploy it on Polygon`: [Link](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon)
 
 ### Technical Details
 **Languages:**
@@ -68,4 +68,4 @@ npm start
 ### License
 [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE)
 
-Don't forget to leave a ⭐️
+Don't forget to leave a 🌟.
