@@ -16,10 +16,10 @@
 </div>
 
 ## Article
-`Build a Social Media dApp & Deploy it on Polygon`: [Link](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon)
+`Build a Social Media dApp & Deploy it on Polygon`: [link](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon).
 
 ## Inspired by
-**Dapp University** YouTube video: [Link](https://www.youtube.com/watch?v=OLsteD3xkPQ&ab_channel=DappUniversity)
+**Dapp University** YouTube: Video [link](https://www.youtube.com/watch?v=OLsteD3xkPQ&ab_channel=DappUniversity).
 
 ## Technical Details
 **Languages:**
