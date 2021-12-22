@@ -6,8 +6,7 @@ export default function Footer() {
       <div className="footer">
         <section className="footer-links content-container">
           <div className="text-center p-4">
-            © 2021 Copyright 
-            <a className="text-reset fw-bold" href="/"> DTube</a>
+            <a className="text-reset fw-bold" href="https://github.com/AkhileshThite/dtube/">GitHub</a>
           </div>
         </section>
       </div>
