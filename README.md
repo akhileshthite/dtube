@@ -12,14 +12,13 @@
 <div align="center">
   <img src="https://visitor-badge.glitch.me/badge?page_id=AkhileshThite.dtube" alt="visitors" />
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube?color=1FC71F" alt="GitHub release" />
-<!--   <a href="https://twitter.com/AkhileshThite_" target="_blank"><img src="https://img.shields.io/twitter/follow/akhileshthite_?style=social" alt="twitter" /></a> -->
 </div>
 
-## Article
+## Tutorial blog
 `Build a Social Media dApp & Deploy it on Polygon`: Article [link](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon).
 
 ## Inspired by
-**Dapp University** YouTube: Video [link](https://www.youtube.com/watch?v=OLsteD3xkPQ&ab_channel=DappUniversity).
+[Dapp University](https://www.youtube.com/channel/UCY0xL8V6NzzFcwzHCgB8orQ).
 
 ## Technical Details
 **Languages:**
@@ -43,7 +42,7 @@
 ## Contracts
 ` /src/contracts/DTube.sol`
 
-## Project setup
+## Development
 Open ganache personal blockchain. Don't forget to add private key in MetaMask.
 
 ```
@@ -70,5 +69,7 @@ npm start
 
 ## License
 [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE)
+
+<hr>
 
 Don't forget to leave a 🌟.
