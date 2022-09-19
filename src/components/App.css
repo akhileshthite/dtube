@@ -1,40 +1,46 @@
 html {
-    overflow: scroll;
-    overflow-x: hidden;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 4px; /* Remove scrollbar space */
+  background: white; /* Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: transparent;
+  border-radius: 2px;
+  background: skyblue;
 }
 
-body{
-    background-color: white;
+body {
+  background-color: #f6f8fd;
 }
 
-.main{
-    margin-bottom:-200px;
+.main {
+  margin-bottom: -200px;
 }
-.feed-title{
-    font-style:normal;
-    font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: -10px;
+.feed-title {
+  font-style: normal;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: -10px;
 }
-.video-title{
-    margin-left: 10px;
-    font-style:normal;
-    font-size: xx-large;
-    font-family: Arial, Helvetica, sans-serif;
+.video-title {
+  margin-left: 10px;
+  font-style: normal;
+  font-size: xx-large;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-.footer{
-    background-color: lightgray;
-    margin-top: 500px;
+.card {
+  cursor: pointer;
 }
-.footer-links{
-    padding-top: 1px;
+.card:hover {
+  border: 1px solid skyblue;
+}
+.footer {
+  background-color: lightgray;
+  margin-top: 500px;
+}
+.footer-links {
+  padding-top: 1px;
 }
