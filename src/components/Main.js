@@ -25,6 +25,22 @@ class Main extends Component {
                   <i className="video-title">{this.props.currentTitle}</i>
                 </b>
               </h3>
+              <div className="mt-3">
+                <p>
+                  IPFS CID:{" "}
+                  <span className="text-secondary">
+                    {this.props.currentHash}
+                  </span>
+                </p>
+                <p>
+                  Share IPFS URL:{" "}
+                  <a
+                    href={`https://dweb.link/ipfs/${this.props.currentHash}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >{`https://dweb.link/ipfs/${this.props.currentHash}`}</a>
+                </p>
+              </div>
             </div>
           </div>
           <div
