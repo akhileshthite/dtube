@@ -1,6 +1,6 @@
 {
-  "short_name": "Starter Kit",
-  "name": "Dapp University Starter Kit",
+  "short_name": "DTube",
+  "name": "DTube: decentralized video sharing & social media platform on Ethereum blockchain.",
   "icons": [
     {
       "src": "favicon.ico",
