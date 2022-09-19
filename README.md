@@ -18,7 +18,7 @@
 
 > ⚠️ Use this DApp for educational purposes only! DTube is not responsible for the harm caused by the content you're uploading.
 
-DTube uploads the video files to [IPFS](https://ipfs.tech/) and stores those IPFS [CID](https://docs.ipfs.tech/concepts/content-addressing/)s to the blockchain network. Read the step-by-step tutorial 📝 "[Build a Social Media dApp & Deploy it on Polygon](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon)" to learn how to BUIDL it from scratch. If you have any queries, then please create a [discussion thread](<(https://github.com/akhileshthite/dtube/discussions)>).
+DTube uploads the video files to [IPFS](https://ipfs.tech/) and stores those IPFS [CID](https://docs.ipfs.tech/concepts/content-addressing/)s to the blockchain network. Read the step-by-step tutorial 📝 "[Build a Social Media dApp & Deploy it on Polygon](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon)" to learn how to BUIDL it from scratch. If you have any queries, then please create a [discussion thread](https://github.com/akhileshthite/dtube/discussions).
 
 This DApp is inspired by the [Dapp University](https://www.youtube.com/channel/UCY0xL8V6NzzFcwzHCgB8orQ) YouTube channel.
 
