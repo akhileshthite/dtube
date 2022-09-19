@@ -14,62 +14,74 @@
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube?color=1FC71F" alt="GitHub release" />
 </div>
 
-## Tutorial blog
-`Build a Social Media dApp & Deploy it on Polygon`: Article [link](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon).
+## About
 
-## Inspired by
-[Dapp University](https://www.youtube.com/channel/UCY0xL8V6NzzFcwzHCgB8orQ).
+> ⚠️ Use this DApp for educational purposes only! DTube is not responsible for the harm caused by the content you're uploading.
 
-## Technical Details
-**Languages:**
-```Solidity, JavaScript, HTML5, CSS3```
+DTube uploads the video files to [IPFS](https://ipfs.tech/) and stores those IPFS [CID](https://docs.ipfs.tech/concepts/content-addressing/)s to the blockchain network. Read the step-by-step tutorial 📝 "[Build a Social Media dApp & Deploy it on Polygon](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon)" to learn how to BUIDL it from scratch :D
 
-**Libraries:** 
-```React.js, Web3.js```
+This DApp is inspired by the [Dapp University](https://www.youtube.com/channel/UCY0xL8V6NzzFcwzHCgB8orQ) YouTube channel.
 
-**Tools:** 
-```IPFS```
+## Development instructions
 
-**Platforms:** 
-```Ethereum, Fleek```
+### Installation & setup
 
-## Networks
-1. ```Matic Mumbai Test Network```
-2. ```Rinkeby Test Network```
-3. ```Ropsten Test Network```
-4. ```Goerli Test Network```
+Make sure you have truffle installed on your computer.
 
-## Contracts
-` /src/contracts/DTube.sol`
-
-## Development
-Open ganache personal blockchain. Don't forget to add private key in MetaMask.
-
-```
-ganache-cli
+```sh
+# Install Truffle globally
+npm install -g truffle
 ```
 
-Install dependancies
+Ensure you create an `.env` file in `root` directory. Then to access the Ethereum network/node, create a project on [infura](https://infura.io/) and copy-paste the `infura project-id url` in `.env` with a variable name `INFURA_RINKEBY` or `any network you like`.
+
+```sh
+INFURA_RINKEBY=https://rinkeby.infura.io/v3/YOUR_PROJECT_ID
+```
+
+Paste the 12 word Secret Recovery Phrase of your (preferably newly generated and testnet-only) MetaMask wallet in `.env` with the variable name `MNEMONIC`. This will be loaded by truffle at runtime, and the environment variable can then be accessed with `process.env.MNEMONIC`.
+
+```sh
+MNEMONIC=for example put your twelve word BIP39 secret recovery phrase here
+```
+
+OR
+
+To develop on ganache blockchain, open ganache and import the accounts by adding your ganache private keys in MetaMask.
+
+```sh
+$ ganache-cli
+```
+
+### Deployment
+
+To deploy the smart contracts on blockchain networks, follow the given truffle command below.
+
+```sh
+# truffle migrate --network NETWORK_NAME
+truffle migrate --network rinkeby
+
+# --reset: Run all migrations from the beginning, instead of running from the last completed migration.
 
 ```
-npm install
-```
 
-Deploy the smart contracts to the blockchain.
+For more information, read [truffle docs](https://trufflesuite.com/docs/truffle/).
 
-```
-truffle migrate
-```
+### React client
 
 Start react app.
 
-```
+```sh
 npm start
+Starting the development server...
 ```
 
+> 📌 Note: I cannot update this repo (main-branch) with react hooks because the initial [educational tutorial](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon) was written with react classes. However, if you want to work on this issue, then please `fork` and push your changes to `react-hooks` branch and send a [pull request](https://github.com/akhileshthite/dtube/pulls) for the same.
+
 ## License
-[MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE)
+
+DTube is licensed under the [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE).
 
 <hr>
 
-Don't forget to leave a 🌟.
+If you learned something new, then don't forget to leave a 🌟 and <a href="https://twitter.com/cryptoroots_xyz" target="_blank"><img src="https://img.shields.io/twitter/follow/akhileshthite_?style=social" alt="twitter" /></a>
