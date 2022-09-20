@@ -14,6 +14,12 @@
   <img src="https://img.shields.io/github/v/release/AkhileshThite/DTube?color=1FC71F" alt="GitHub release" />
 </div>
 
+## Contracts
+
+- https://rinkeby.etherscan.io/address/0xcda87299367d6b29fef13ca08448bfaaf2e4a175
+- https://ropsten.etherscan.io/address/0xc6eb38be0949a63f7c3ac36a053de209970fa19b
+- https://goerli.etherscan.io/address/0x678af4458950d0aefbc427e663050f50ebdab52a
+
 ## About
 
 > ⚠️ Use this DApp for educational purposes only! DTube is not responsible for the harm caused by the content you're uploading.
@@ -33,20 +39,22 @@ Make sure you have truffle installed on your computer.
 npm install -g truffle
 ```
 
-Ensure you create an `.env` file in `root` directory. Then to access the Ethereum network/node, create a project on [infura](https://infura.io/) and copy-paste the `infura project-id url` in `.env` with a variable name `REACT_APP_INFURA_RINKEBY` or `any network you like`.
+- Ensure you create an `.env` file in `root` directory. Then to access the Ethereum network/node, create a project on [infura](https://infura.io/) and copy-paste the `infura project-id url` in `.env` with a variable name `REACT_APP_INFURA_RINKEBY` or `any network you like`.
 
 ```sh
 REACT_APP_INFURA_RINKEBY=https://rinkeby.infura.io/v3/YOUR_PROJECT_ID
 ```
 
-Paste the 12 word Secret Recovery Phrase of your (preferably newly generated and testnet-only) MetaMask wallet in `.env` with the variable name `REACT_APP_MNEMONIC`. This will be loaded by truffle at runtime, and the environment variable can then be accessed with `process.env.REACT_APP_MNEMONIC`.
+- Paste the 12 word Secret Recovery Phrase of your (preferably newly generated and testnet-only) MetaMask wallet in `.env` with the variable name `REACT_APP_MNEMONIC`. This will be loaded by truffle at runtime, and the environment variable can then be accessed with `process.env.REACT_APP_MNEMONIC`.
 
 ```sh
 REACT_APP_MNEMONIC=for example put your twelve word BIP39 secret recovery phrase here
 ```
-For development and testing, you have to create your own web3.storage API token. To do that, `login to` [web3.storage](https://web3.storage/) -> `create a new API token` -> `copy the API token`.
+
+- For development and testing, you have to create your own web3.storage API token. To do that, `login to` [web3.storage](https://web3.storage/) -> `create a new API token` -> `copy the API token`.
 
 Then create a `.env` file in the root directory.
+
 ```bash
 REACT_APP_API_TOKEN=PASTE_YOUR_API_TOKEN
 ```
