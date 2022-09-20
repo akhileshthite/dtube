@@ -15,7 +15,7 @@ class Main extends Component {
               style={{ maxHeight: "720px" }}
             >
               <video
-                src={`https://dweb.link/ipfs/${this.props.currentHash}`}
+                src={`https://w3s.link/ipfs/${this.props.currentHash}`}
                 controls
               ></video>
             </div>
@@ -35,10 +35,10 @@ class Main extends Component {
                 <p>
                   Share IPFS URL:{" "}
                   <a
-                    href={`https://dweb.link/ipfs/${this.props.currentHash}`}
+                    href={`https://w3s.link/ipfs/${this.props.currentHash}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                  >{`https://dweb.link/ipfs/${this.props.currentHash}`}</a>
+                  >{`https://w3s.link/ipfs/${this.props.currentHash}`}</a>
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@ class Main extends Component {
                       }
                     >
                       <video
-                        src={`https://dweb.link/ipfs/${video.hash}`}
+                        src={`https://w3s.link/ipfs/${video.hash}`}
                         style={{ width: "200px", height: "110px" }}
                       />
                     </p>

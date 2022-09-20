@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Web3Storage } from "web3.storage/dist/bundle.esm.min.js";
 import DTube from "../abis/DTube.json";
 import Navbar from "./Navbar";
 import Main from "./Main";
@@ -6,12 +7,9 @@ import Footer from "./Footer";
 import Web3 from "web3";
 import "./App.css";
 
-//Declare IPFS
-const ipfsClient = require("ipfs-http-client");
-const ipfs = ipfsClient({
-  host: "ipfs.infura.io",
-  port: 5001,
-  protocol: "https",
+const client = new Web3Storage({
+  token:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDlEMDAwZDczNUQ1QzkzODY5MjgxMzQ0QmQ2RTcxNjdCQUM1NDVCMzciLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTU3Mzg3OTc5NjcsIm5hbWUiOiJkdHViZSJ9.i9gCEWvmTvtHqYvCjAtBZTX5_zHM2K_V5_5t_JtEyTI",
 });
 
 const loaderStyle = {
@@ -76,35 +74,23 @@ class App extends Component {
 
   captureFile = (event) => {
     event.preventDefault();
-    const file = event.target.files[0];
-    const reader = new window.FileReader();
-    reader.readAsArrayBuffer(file);
-
-    reader.onloadend = () => {
-      this.setState({ buffer: Buffer(reader.result) });
-      console.log("buffer", this.state.buffer);
-    };
+    const file = document.querySelector('input[type="file"]');
+    return this.setState({ file: file });
   };
 
-  uploadVideo = (title) => {
+  async uploadVideo(title) {
     console.log("Submitting file to IPFS...");
+    const videoFile = this.state.file;
     //adding file to the IPFS
-    ipfs.add(this.state.buffer, (error, result) => {
-      console.log("IPFS result", result);
-      if (error) {
-        console.error(error);
-        return;
-      }
-
-      this.setState({ loading: true });
-      this.state.dtube.methods
-        .uploadVideo(result[0].hash, title)
-        .send({ from: this.state.account })
-        .on("transactionHash", (hash) => {
-          this.setState({ loading: false });
-        });
-    });
-  };
+    const cid = await client.put(videoFile.files, { wrapWithDirectory: false });
+    this.setState({ loading: true });
+    this.state.dtube.methods
+      .uploadVideo(cid, title)
+      .send({ from: this.state.account })
+      .on("transactionHash", (hash) => {
+        this.setState({ loading: false });
+      });
+  }
 
   changeVideo = (hash, title) => {
     this.setState({ currentHash: hash });
@@ -114,7 +100,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buffer: null,
+      file: null,
       account: "",
       dtube: null,
       videos: [],

@@ -29,7 +29,8 @@
     "truffle": "^5.5.30",
     "truffle-hdwallet-provider": "^1.0.17",
     "truffle-hdwallet-provider-privkey": "^0.3.0",
-    "web3": "^1.8.0"
+    "web3": "^1.8.0",
+    "web3.storage": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
