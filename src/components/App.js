@@ -6,11 +6,10 @@ import Main from "./Main";
 import Footer from "./Footer";
 import Web3 from "web3";
 import "./App.css";
+import 'dotenv/config'
 
-const client = new Web3Storage({
-  token:
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDlEMDAwZDczNUQ1QzkzODY5MjgxMzQ0QmQ2RTcxNjdCQUM1NDVCMzciLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTU3Mzg3OTc5NjcsIm5hbWUiOiJkdHViZSJ9.i9gCEWvmTvtHqYvCjAtBZTX5_zHM2K_V5_5t_JtEyTI",
-});
+const token = process.env.REACT_APP_API_TOKEN;
+const client = new Web3Storage({ token });
 
 const loaderStyle = {
   position: "fixed",
