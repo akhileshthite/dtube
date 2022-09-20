@@ -18,7 +18,7 @@
 
 > ⚠️ Use this DApp for educational purposes only! DTube is not responsible for the harm caused by the content you're uploading.
 
-DTube uploads the video files to [IPFS](https://ipfs.tech/) and stores those IPFS [CID](https://docs.ipfs.tech/concepts/content-addressing/)s to the blockchain network. Read the step-by-step tutorial 📝 "[Build a Social Media dApp & Deploy it on Polygon](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon)" to learn how to BUIDL it from scratch. If you have any queries, then please create a [discussion thread](https://github.com/akhileshthite/dtube/discussions).
+DTube uploads the video files to [IPFS](https://ipfs.tech/) by using [web3.storage](https://web3.storage/) and stores those IPFS [CID](https://docs.ipfs.tech/concepts/content-addressing/)s to the blockchain network. Read the step-by-step tutorial 📝 "[Build a Social Media dApp & Deploy it on Polygon](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon)" to learn how to BUIDL it from scratch. If you have any queries, then please create a [discussion thread](https://github.com/akhileshthite/dtube/discussions).
 
 This DApp is inspired by the [Dapp University](https://www.youtube.com/channel/UCY0xL8V6NzzFcwzHCgB8orQ) YouTube channel.
 
@@ -33,16 +33,22 @@ Make sure you have truffle installed on your computer.
 npm install -g truffle
 ```
 
-Ensure you create an `.env` file in `root` directory. Then to access the Ethereum network/node, create a project on [infura](https://infura.io/) and copy-paste the `infura project-id url` in `.env` with a variable name `INFURA_RINKEBY` or `any network you like`.
+Ensure you create an `.env` file in `root` directory. Then to access the Ethereum network/node, create a project on [infura](https://infura.io/) and copy-paste the `infura project-id url` in `.env` with a variable name `REACT_APP_INFURA_RINKEBY` or `any network you like`.
 
 ```sh
-INFURA_RINKEBY=https://rinkeby.infura.io/v3/YOUR_PROJECT_ID
+REACT_APP_INFURA_RINKEBY=https://rinkeby.infura.io/v3/YOUR_PROJECT_ID
 ```
 
-Paste the 12 word Secret Recovery Phrase of your (preferably newly generated and testnet-only) MetaMask wallet in `.env` with the variable name `MNEMONIC`. This will be loaded by truffle at runtime, and the environment variable can then be accessed with `process.env.MNEMONIC`.
+Paste the 12 word Secret Recovery Phrase of your (preferably newly generated and testnet-only) MetaMask wallet in `.env` with the variable name `REACT_APP_MNEMONIC`. This will be loaded by truffle at runtime, and the environment variable can then be accessed with `process.env.REACT_APP_MNEMONIC`.
 
 ```sh
-MNEMONIC=for example put your twelve word BIP39 secret recovery phrase here
+REACT_APP_MNEMONIC=for example put your twelve word BIP39 secret recovery phrase here
+```
+For development and testing, you have to create your own web3.storage API token. To do that, `login to` [web3.storage](https://web3.storage/) -> `create a new API token` -> `copy the API token`.
+
+Then create a `.env` file in the root directory.
+```bash
+REACT_APP_API_TOKEN=PASTE_YOUR_API_TOKEN
 ```
 
 OR
