@@ -28,6 +28,12 @@ DTube uploads the video files to [IPFS](https://ipfs.tech/) by using [web3.stora
 
 This DApp is inspired by the [Dapp University](https://www.youtube.com/channel/UCY0xL8V6NzzFcwzHCgB8orQ) YouTube channel.
 
+## Demo
+
+<div align="center">
+  <img src="https://github.com/akhileshthite/dtube/blob/main/demo.gif" />
+</div>
+
 ## Development instructions
 
 ### Installation & setup
