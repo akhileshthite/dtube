@@ -1,8 +1,14 @@
-pragma solidity ^0.5.0;
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
 
 contract DTube {
-  uint public videoCount = 0;
-  string public name = "DTube";
+
+  error NotProperHash();
+  error NotProperTitle();
+    
+  uint256 public videoCount;
+  string public constant name = "DTube";
   mapping(uint => Video) public videos;
 
   struct Video {
@@ -19,16 +25,16 @@ contract DTube {
     address author
   );
 
-  constructor() public {
-  }
-
-  function uploadVideo(string memory _videoHash, string memory _title) public {
+  function uploadVideo(string calldata _videoHash, string calldata _title) public {
     // Make sure the video hash exists
-    require(bytes(_videoHash).length > 0);
+    if(bytes(_videoHash).length == 0){
+      revert NotProperHash();
+    }
+   
     // Make sure video title exists
-    require(bytes(_title).length > 0);
-    // Make sure uploader address exists
-    require(msg.sender!=address(0));
+    if(bytes(_title).length == 0){
+      revert NotProperTitle();
+    }
 
     // Increment video id
     videoCount ++;
