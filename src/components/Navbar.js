@@ -5,7 +5,12 @@ import dtube from "../dtube.png";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-dark fixed-top bg-white flex-md-nowrap p-1 shadow text-monospace">
+      <nav
+        className={
+          "navbar navbar-dark fixed-top flex-md-nowrap p-1 shadow text-monospace" +
+          (this.props.isDarkModeEnabled ? " bg-dark" : " bg-white")
+        }
+      >
         <div className="px-5">
           <a
             className="navbar-brand col-sm-3 col-md-2 mr-0"
@@ -19,12 +24,39 @@ class Navbar extends Component {
               className="d-inline-block align-top"
               alt="DTube logo"
             />
-            &nbsp;<span className="text-secondary">DTube</span>
+            &nbsp;
+            <span
+              className={
+                this.props.isDarkModeEnabled ? "text-white" : "text-secondary"
+              }
+            >
+              DTube
+            </span>
           </a>
         </div>
-        <ul className="navbar-nav px-5">
+        <ul
+          className="navbar-nav px-5"
+          style={{ display: "flex", flexDirection: "row" }}
+        >
+          <li>
+            <label className="switch">
+              <input
+                type="checkbox"
+                onClick={this.props.toggleDarkMode}
+                checked={this.props.isDarkModeEnabled}
+              />
+              <span className="slider round"></span>
+            </label>
+          </li>
           <li className="nav-item text-nowrap h5 d-none d-sm-none d-sm-block">
-            <small className="text-secondary px-1">
+            <small
+              className={
+                "px-1" +
+                (this.props.isDarkModeEnabled
+                  ? " text-white"
+                  : " text-secondary")
+              }
+            >
               <small id="account">{this.props.account}</small>
             </small>
             {this.props.account ? (

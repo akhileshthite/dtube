@@ -6,7 +6,7 @@ import Main from "./Main";
 import Footer from "./Footer";
 import Web3 from "web3";
 import "./App.css";
-import 'dotenv/config'
+import "dotenv/config";
 
 const token = process.env.REACT_APP_API_TOKEN;
 const client = new Web3Storage({ token });
@@ -96,6 +96,14 @@ class App extends Component {
     this.setState({ currentTitle: title });
   };
 
+  toggleDarkMode(event) {
+    event.stopPropagation();
+    console.log("hello");
+    this.setState((prevState) => {
+      return { isDarkModeEnabled: !prevState.isDarkModeEnabled };
+    });
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -106,20 +114,32 @@ class App extends Component {
       loading: true,
       currentHash: null,
       currentTitle: null,
+      isDarkModeEnabled: false,
     };
 
     this.uploadVideo = this.uploadVideo.bind(this);
     this.captureFile = this.captureFile.bind(this);
     this.changeVideo = this.changeVideo.bind(this);
+    this.toggleDarkMode = this.toggleDarkMode.bind(this);
   }
 
   render() {
     return (
-      <div>
-        <Navbar account={this.state.account} />
+      <div className={this.state.isDarkModeEnabled ? "bg-dark" : "bg-light"}>
+        <Navbar
+          account={this.state.account}
+          toggleDarkMode={this.toggleDarkMode}
+          isDarkModeEnabled={this.state.isDarkModeEnabled}
+        />
         {this.state.loading ? (
           <div id="loader" style={loaderStyle}>
-            <p>Loading...</p>
+            <p
+              className={
+                this.state.isDarkModeEnabled ? "text-white" : "text-secondary"
+              }
+            >
+              Loading...
+            </p>
           </div>
         ) : (
           <>
@@ -131,8 +151,9 @@ class App extends Component {
               changeVideo={this.changeVideo}
               currentHash={this.state.currentHash}
               currentTitle={this.state.currentTitle}
+              isDarkModeEnabled={this.state.isDarkModeEnabled}
             />
-            <Footer />
+            <Footer isDarkModeEnabled={this.state.isDarkModeEnabled} />
           </>
         )}
       </div>
