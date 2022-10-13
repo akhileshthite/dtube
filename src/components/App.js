@@ -98,10 +98,31 @@ class App extends Component {
 
   toggleDarkMode(event) {
     event.stopPropagation();
-    console.log("hello");
     this.setState((prevState) => {
+      this.setDarkModeToLocalStorage(!prevState.isDarkModeEnabled);
       return { isDarkModeEnabled: !prevState.isDarkModeEnabled };
     });
+  }
+
+  setDarkModeToLocalStorage(val) {
+    try {
+      localStorage.setItem("isDarkModeEnabled", val);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  getDarkModeFromLocalStorage() {
+    try {
+      const isDarkModeEnabled = localStorage.getItem("isDarkModeEnabled");
+      if (isDarkModeEnabled !== undefined || isDarkModeEnabled !== null) {
+        if (isDarkModeEnabled === "true") return true;
+        else return false;
+      }
+      return false;
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   constructor(props) {
@@ -121,6 +142,10 @@ class App extends Component {
     this.captureFile = this.captureFile.bind(this);
     this.changeVideo = this.changeVideo.bind(this);
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ isDarkModeEnabled: this.getDarkModeFromLocalStorage() });
   }
 
   render() {
