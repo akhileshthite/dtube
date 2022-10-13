@@ -38,8 +38,18 @@ class Navbar extends Component {
           className="navbar-nav px-5"
           style={{ display: "flex", flexDirection: "row" }}
         >
-          <li>
-            <label className="switch">
+          <li style={{ display: "flex", alignItems: "center" }}>
+            <p
+              style={{ marginBottom: 0, marginRight: "10px" }}
+              className={
+                this.props.isDarkModeEnabled ? "text-white" : "text-secondary"
+              }
+            >
+              {this.props.isDarkModeEnabled ? "Dark Mode" : "Light Mode"}
+            </p>
+          </li>
+          <li style={{ display: "flex", alignItems: "center" }}>
+            <label className="switch" style={{ margin: 0 }}>
               <input
                 type="checkbox"
                 onClick={this.props.toggleDarkMode}
@@ -48,7 +58,10 @@ class Navbar extends Component {
               <span className="slider round"></span>
             </label>
           </li>
-          <li className="nav-item text-nowrap h5 d-none d-sm-none d-sm-block">
+          <li
+            style={{ margin: 0 }}
+            className="nav-item text-nowrap h5 d-none d-sm-none d-sm-block"
+          >
             <small
               className={
                 "px-1" +
