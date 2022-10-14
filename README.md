@@ -97,6 +97,8 @@ npm start
 Starting the development server...
 ```
 
+> ⚠️ If dealing with “JavaScript heap out of memory” error after `npm start` then use the following command to solve it: `export NODE_OPTIONS="--max-old-space-size=8192"`
+
 > 📌 Note: I cannot update this repo (main-branch) with react hooks because the initial [educational tutorial](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon) was written with react classes. However, if you want to work on this issue, then please `fork` and push your changes to `react-hooks` branch and send a [pull request](https://github.com/akhileshthite/dtube/pulls) for the same.
 
 ## License
