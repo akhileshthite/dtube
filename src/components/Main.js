@@ -4,7 +4,12 @@ import "./App.css";
 class Main extends Component {
   render() {
     return (
-      <div className="container-fluid text-monospace main p-2">
+      <div
+        className={
+          "container-fluid text-monospace main p-2" +
+          (this.props.isDarkModeEnabled ? " bg-dark" : " bg-white")
+        }
+      >
         <br></br>
         &nbsp;
         <br></br>
@@ -20,20 +25,40 @@ class Main extends Component {
               ></video>
             </div>
             <div className="mt-3 ml-5">
-              <h3>
+              <h3
+                className={
+                  this.props.isDarkModeEnabled ? "text-white" : "text-dark"
+                }
+              >
                 <b>
                   <i className="video-title">{this.props.currentTitle}</i>
                 </b>
               </h3>
               <div className="mt-3">
-                <p>
-                  IPFS CID:{" "}
-                  <span className="text-secondary">
+                <p
+                  style={{ fontWeight: "bold" }}
+                  className={
+                    this.props.isDarkModeEnabled ? "text-light" : "text-dark"
+                  }
+                >
+                  IPFS CID:
+                  <span
+                    className={
+                      this.props.isDarkModeEnabled
+                        ? "text-white"
+                        : "text-secondary"
+                    }
+                  >
                     {this.props.currentHash}
                   </span>
                 </p>
-                <p>
-                  Share IPFS URL:{" "}
+                <p
+                  style={{ fontWeight: "bold" }}
+                  className={
+                    this.props.isDarkModeEnabled ? "text-light" : "text-dark"
+                  }
+                >
+                  Share IPFS URL:
                   <a
                     href={`https://w3s.link/ipfs/${this.props.currentHash}`}
                     target="_blank"
@@ -48,7 +73,16 @@ class Main extends Component {
             style={{ maxHeight: "1400px", minWidth: "175px" }}
           >
             <h5 className="feed-title">
-              <b>Video Feed 📺</b>
+              <b
+                className={
+                  this.props.isDarkModeEnabled ? "text-white" : "text-secondary"
+                }
+              >
+                Video Feed
+                <span role="img" aria-label="video-emote">
+                  📺
+                </span>
+              </b>
             </h5>
             <form
               onSubmit={(event) => {
