@@ -18,7 +18,7 @@
 
 - https://goerli.etherscan.io/address/0x678af4458950d0aefbc427e663050f50ebdab52a
 - https://mumbai.polygonscan.com/address/0xffded6c68ccf4ed30d2b9c85ba21a926cccc8e0e
-- ⚠️ Deprecated [chains](https://blog.ethereum.org/2022/06/21/testnet-deprecation):
+> ⚠️ Deprecated chains, [learn more](https://blog.ethereum.org/2022/06/21/testnet-deprecation):
 - https://rinkeby.etherscan.io/address/0xcda87299367d6b29fef13ca08448bfaaf2e4a175
 - https://ropsten.etherscan.io/address/0xc6eb38be0949a63f7c3ac36a053de209970fa19b
 
@@ -100,7 +100,7 @@ Starting the development server...
 
 > ⚠️ If dealing with “JavaScript heap out of memory” error after `npm start` then use the following command to solve it: `export NODE_OPTIONS="--max-old-space-size=8192"`
 
-> 📌 Note: I cannot update this repo (main-branch) with react hooks because the initial [educational tutorial](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon) was written with react classes. However, if you want to work on this issue, then please `fork` and push your changes to `react-hooks` branch and send a [pull request](https://github.com/akhileshthite/dtube/pulls) for the same.
+> 📌 Note: I cannot update this repo (main-branch) with react hooks because the initial [educational tutorial](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon) was written with react classes. However, if you want to work on this issue, then please `fork` the main branch and push your changes to `react-hooks` branch and send a [pull request](https://github.com/akhileshthite/dtube/pulls) for the same.
 
 ## License
 
