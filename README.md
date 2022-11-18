@@ -16,10 +16,11 @@
 
 ## Contracts
 
-- https://rinkeby.etherscan.io/address/0xcda87299367d6b29fef13ca08448bfaaf2e4a175
-- https://ropsten.etherscan.io/address/0xc6eb38be0949a63f7c3ac36a053de209970fa19b
 - https://goerli.etherscan.io/address/0x678af4458950d0aefbc427e663050f50ebdab52a
 - https://mumbai.polygonscan.com/address/0xffded6c68ccf4ed30d2b9c85ba21a926cccc8e0e
+- ⚠️ Deprecated [chains](https://blog.ethereum.org/2022/06/21/testnet-deprecation):
+- https://rinkeby.etherscan.io/address/0xcda87299367d6b29fef13ca08448bfaaf2e4a175
+- https://ropsten.etherscan.io/address/0xc6eb38be0949a63f7c3ac36a053de209970fa19b
 
 ## About
 
