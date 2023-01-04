@@ -95,7 +95,7 @@ class Main extends Component {
               <input
                 type="file"
                 ref="fileUpload"
-                accept=".mp4, .mov, .mkv .ogg .wmv"
+                accept="video/*"
                 onChange={this.props.captureFile}
                 style={{ width: "250px" }}
               />
