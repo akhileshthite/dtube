@@ -1,10 +1,13 @@
-import React, { Component } from "react";
-import DTube from "../abis/DTube.json";
-import Navbar from "./Navbar";
-import Main from "./Main";
-import Footer from "./Footer";
-import Web3 from "web3";
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import { Web3Storage } from 'web3.storage/dist/bundle.esm.min.js';
+import DTube from '../abis/DTube.json';
+import Navbar from './Navbar';
+import Main from './Main';
+import Footer from './Footer';
+import Web3 from 'web3';
+import './App.css';
+
+require('dotenv').config();
 
 //Declare IPFS
 const ipfsClient = require("ipfs-http-client");
@@ -15,142 +18,159 @@ const ipfs = ipfsClient({
 });
 
 const loaderStyle = {
-  position: "fixed",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
 };
 
-class App extends Component {
-  async componentWillMount() {
-    await this.loadWeb3();
-    await this.loadBlockchainData();
-  }
+const App = () => {
+    const [file, setFile] = useState(null);
+    const [account, setAccount] = useState('');
+    const [dtube, setDtube] = useState(null);
+    const [videos, setVideos] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [currentHash, setCurrentHash] = useState(null);
+    const [currentTitle, setCurrentTitle] = useState(null);
+    const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
 
-  async loadWeb3() {
-    if (window.ethereum) {
-      window.web3 = new Web3(window.ethereum);
-      await window.ethereum.enable();
-    } else if (window.web3) {
-      window.web3 = new Web3(window.web3.currentProvider);
-    } else {
-      window.alert(
-        "Non-Ethereum browser detected. You should consider trying MetaMask!"
-      );
-    }
-  }
+    useEffect(() => {
+        loadWeb3();
+        loadBlockchainData();
+        setIsDarkModeEnabled(getDarkModeFromLocalStorage());
+    }, []);
 
-  async loadBlockchainData() {
-    const web3 = window.web3;
-    // Load account
-    const accounts = await web3.eth.getAccounts();
-    this.setState({ account: accounts[0] });
-    // Network ID
-    const networkId = await web3.eth.net.getId();
-    const networkData = DTube.networks[networkId];
-    if (networkData) {
-      const dtube = new web3.eth.Contract(DTube.abi, networkData.address);
-      this.setState({ dtube });
-      const videosCount = await dtube.methods.videoCount().call();
-      this.setState({ videosCount });
-      // Load videos, sort by newest
-      for (var i = videosCount; i >= 1; i--) {
-        const video = await dtube.methods.videos(i).call();
-        this.setState({
-          videos: [...this.state.videos, video],
-        });
-      }
-      //Set latest video with title to view as default
-      const latest = await dtube.methods.videos(videosCount).call();
-      this.setState({
-        currentHash: latest.hash,
-        currentTitle: latest.title,
-      });
-      this.setState({ loading: false });
-    } else {
-      window.alert("DTube contract not deployed to detected network.");
-    }
-  }
-
-  captureFile = (event) => {
-    event.preventDefault();
-    const file = event.target.files[0];
-    const reader = new window.FileReader();
-    reader.readAsArrayBuffer(file);
-
-    reader.onloadend = () => {
-      this.setState({ buffer: Buffer(reader.result) });
-      console.log("buffer", this.state.buffer);
-    };
-  };
-
-  uploadVideo = (title) => {
-    console.log("Submitting file to IPFS...");
-    //adding file to the IPFS
-    ipfs.add(this.state.buffer, (error, result) => {
-      console.log("IPFS result", result);
-      if (error) {
-        console.error(error);
-        return;
-      }
-
-      this.setState({ loading: true });
-      this.state.dtube.methods
-        .uploadVideo(result[0].hash, title)
-        .send({ from: this.state.account })
-        .on("transactionHash", (hash) => {
-          this.setState({ loading: false });
-        });
-    });
-  };
-
-  changeVideo = (hash, title) => {
-    this.setState({ currentHash: hash });
-    this.setState({ currentTitle: title });
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      buffer: null,
-      account: "",
-      dtube: null,
-      videos: [],
-      loading: true,
-      currentHash: null,
-      currentTitle: null,
+    const loadWeb3 = async () => {
+        if (window.ethereum) {
+            window.web3 = new Web3(window.ethereum);
+            await window.ethereum.request({
+                method: 'eth_requestAccounts',
+            });
+        } else if (window.web3) {
+            window.web3 = new Web3(window.web3.currentProvider);
+        } else {
+            window.alert(
+                'Non-Ethereum browser detected. You should consider trying MetaMask!'
+            );
+        }
     };
 
-    this.uploadVideo = this.uploadVideo.bind(this);
-    this.captureFile = this.captureFile.bind(this);
-    this.changeVideo = this.changeVideo.bind(this);
-  }
+    const loadBlockchainData = async () => {
+        const web3 = window.web3;
+        // Load account
+        const accounts = await web3.eth.getAccounts();
+        setAccount(accounts[0]);
+        // Network ID
+        const networkId = await web3.eth.net.getId();
+        const networkData = DTube.networks[networkId];
+        if (networkData) {
+            const dtube = new web3.eth.Contract(DTube.abi, networkData.address);
+            setDtube(dtube);
+            const videosCount = await dtube.methods.videoCount().call();
+            // Load videos, sort by newest
+            for (var i = videosCount; i >= 1; i--) {
+                const video = await dtube.methods.videos(i).call();
+                setVideos(videos => [...videos, video]);
+            }
+            //Set latest video with title to view as default
+            const latest = await dtube.methods.videos(videosCount).call();
+            setCurrentHash(latest.hash);
+            setCurrentTitle(latest.title);
+            setLoading(false);
+        } else {
+            window.alert('DTube contract not deployed to detected network.');
+        }
+    };
 
-  render() {
+    const captureFile = event => {
+        event.preventDefault();
+        const file = document.querySelector('input[type="file"]');
+        return setFile(file);
+    };
+
+    const uploadVideo = async title => {
+        console.log('Submitting file to IPFS...');
+        const videoFile = file;
+        //adding file to the IPFS
+        const cid = await client.put(videoFile.files, {
+            wrapWithDirectory: false,
+        });
+        setLoading(true);
+        console.log('Hello');
+        dtube.methods
+            .uploadVideo(cid, title)
+            .send({ from: account })
+            .on('transactionHash', hash => {
+                setLoading(false);
+            });
+    };
+
+    const changeVideo = (hash, title) => {
+        setCurrentHash(hash);
+        setCurrentTitle(title);
+    };
+
+    const toggleDarkMode = event => {
+        event.stopPropagation();
+        setDarkModeToLocalStorage(!isDarkModeEnabled);
+        setIsDarkModeEnabled(!isDarkModeEnabled);
+    };
+
+    const setDarkModeToLocalStorage = val => {
+        try {
+            localStorage.setItem('isDarkModeEnabled', val);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const getDarkModeFromLocalStorage = () => {
+        try {
+            const isDarkModeEnabled = localStorage.getItem('isDarkModeEnabled');
+            if (isDarkModeEnabled !== undefined || isDarkModeEnabled !== null) {
+                if (isDarkModeEnabled === 'true') return true;
+                else return false;
+            }
+            return false;
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
-      <div>
-        <Navbar account={this.state.account} />
-        {this.state.loading ? (
-          <div id="loader" style={loaderStyle}>
-            <p>Loading...</p>
-          </div>
-        ) : (
-          <>
-            <Main
-              videos={this.state.videos}
-              account={this.state.account}
-              uploadVideo={this.uploadVideo}
-              captureFile={this.captureFile}
-              changeVideo={this.changeVideo}
-              currentHash={this.state.currentHash}
-              currentTitle={this.state.currentTitle}
+        <div className={isDarkModeEnabled ? 'bg-dark' : 'bg-light'}>
+            <Navbar
+                account={account}
+                toggleDarkMode={toggleDarkMode}
+                isDarkModeEnabled={isDarkModeEnabled}
             />
-            <Footer />
-          </>
-        )}
-      </div>
+            {loading ? (
+                <div id='loader' style={loaderStyle}>
+                    <p
+                        className={
+                            isDarkModeEnabled ? 'text-white' : 'text-secondary'
+                        }
+                    >
+                        Loading...
+                    </p>
+                </div>
+            ) : (
+                <>
+                    <Main
+                        videos={videos}
+                        account={account}
+                        uploadVideo={uploadVideo}
+                        captureFile={captureFile}
+                        changeVideo={changeVideo}
+                        currentHash={currentHash}
+                        currentTitle={currentTitle}
+                        isDarkModeEnabled={isDarkModeEnabled}
+                    />
+                    <Footer isDarkModeEnabled={isDarkModeEnabled} />
+                </>
+            )}
+        </div>
     );
-  }
-}
+};
 
 export default App;
