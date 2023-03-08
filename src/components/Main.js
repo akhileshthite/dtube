@@ -3,7 +3,6 @@ import './App.css';
 
 const Main = props => {
     const videoTitle = useRef(null);
-    console.log(`https://w3s.link/ipfs/${props.currentHash}`);
     return (
         <div
             className={

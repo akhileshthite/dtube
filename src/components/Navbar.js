@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Identicon from 'identicon.js';
 import dtube from '../dtube.png';
 
@@ -56,7 +56,7 @@ const Navbar = props => {
                         <input
                             type='checkbox'
                             onClick={props.toggleDarkMode}
-                            checked={props.isDarkModeEnabled}
+                            defaultChecked={props.isDarkModeEnabled}
                         />
                         <span className='slider round'></span>
                     </label>
